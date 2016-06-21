@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -24,6 +25,7 @@ public class Pueblos extends AppCompatActivity implements NavigationView.OnNavig
 
     TextView estadoMex;
 
+    ImageButton boton1, boton2, boton3, boton4, boton5, boton6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,49 @@ public class Pueblos extends AppCompatActivity implements NavigationView.OnNavig
         String estado = extra.getString("Estado");
         estadoMex = (TextView) findViewById(R.id.txtEstado);
         estadoMex.setText(estado);
+        boton1 = (ImageButton) findViewById(R.id.imageButton);
+        boton2 = (ImageButton) findViewById(R.id.imageButton2);
+        boton3 = (ImageButton) findViewById(R.id.imageButton3);
+        boton4 = (ImageButton) findViewById(R.id.imageButton4);
+        boton5 = (ImageButton) findViewById(R.id.imageButton5);
+        boton6 = (ImageButton) findViewById(R.id.imageButton6);
+
+        boton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nuevaActivity(v);
+            }
+        });
+        boton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nuevaActivity(v);
+            }
+        });
+        boton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nuevaActivity(v);
+            }
+        });
+        boton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nuevaActivity(v);
+            }
+        });
+        boton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nuevaActivity(v);
+            }
+        });
+        boton6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nuevaActivity(v);
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +108,11 @@ public class Pueblos extends AppCompatActivity implements NavigationView.OnNavig
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void nuevaActivity(View v){
+        Intent i = new Intent(this,intereses.class);
+        startActivity(i);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
